@@ -34,9 +34,9 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20" style={{ backgroundColor: "#0B0C10" }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16">Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-16" style={{ color: "#66FCF1" }}>Projects</h2>
         
         <div className="space-y-24">
           {projects.map((project, index) => (
@@ -45,7 +45,7 @@ const Projects = () => {
               className={`project-item opacity-0 transition-all duration-1000 flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}
             >
               <div className="w-full md:w-1/2 mb-8 md:mb-0">
-                <div className="overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
+                <div className="overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105" style={{ boxShadow: "0 10px 15px -3px rgba(102, 252, 241, 0.2)" }}>
                   <img 
                     src={project.image} 
                     alt={project.name} 
@@ -55,11 +55,17 @@ const Projects = () => {
               </div>
               
               <div className="w-full md:w-1/2 text-left">
-                <h3 className="text-2xl font-bold mb-4">{project.name}</h3>
-                <p className="text-gray-700 mb-6">{project.description}</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: "#66FCF1" }}>{project.name}</h3>
+                <p className="mb-6" style={{ color: "#C5C6C7" }}>{project.description}</p>
                 <a
                   href={project.link}
-                  className="inline-block bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                  className="inline-block py-2 px-6 rounded-full transition-colors duration-300"
+                  style={{ 
+                    backgroundColor: "#45A29E", 
+                    color: "#0B0C10"
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.backgroundColor = "#66FCF1" }}
+                  onMouseOut={(e) => { e.currentTarget.style.backgroundColor = "#45A29E" }}
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -70,22 +76,19 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.8s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };
-
-// Add CSS animation class
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .animate-fadeIn {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-`;
-document.head.appendChild(style);
 
 export default Projects;
