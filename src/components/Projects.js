@@ -4,13 +4,13 @@ const projects = [
   { 
     name: "Vehicle Rental System", 
     description: "A comprehensive platform for managing vehicle rentals with user authentication, booking management, and payment processing.", 
-    link: "https://github.com/U-WarlockX",
+    link: "https://github.com/U-WarlockX/Vehicle-rental-system-",
     image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   { 
     name: "Sustainable Community Management", 
     description: "An eco-friendly community management system that helps track resource usage, organize events, and promote sustainable practices.", 
-    link: "https://github.com/U-WarlockX",
+    link: "https://github.com/samidisjg/Cleansy",
     image: "https://plus.unsplash.com/premium_photo-1726736475750-9579e00eb4d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
 ];
@@ -34,8 +34,25 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="py-20" style={{ backgroundColor: "#0B0C10" }}>
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: "#0B0C10" }}>
+      <div 
+        className="absolute inset-0 opacity-20 z-0"
+        style={{
+          backgroundImage: "linear-gradient(to right, #1F2833 1px, transparent 1px), linear-gradient(to bottom, #1F2833 1px, transparent 1px)", 
+          backgroundSize: "30px 30px"
+        }}
+      ></div>
+
+      <div
+        className="absolute bottom-0 left-1/3 w-64 h-64 rounded-full z-0"
+        style={{ backgroundColor: "#45A29E", opacity: "0.1", filter: "blur(80px)" }}
+      ></div>
+      <div
+        className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full z-0"
+        style={{ backgroundColor: "#66FCF1", opacity: "0.08", filter: "blur(60px)" }}
+      ></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-16" style={{ color: "#66FCF1" }}>Projects</h2>
         
         <div className="space-y-24">

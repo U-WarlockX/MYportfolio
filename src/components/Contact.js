@@ -49,13 +49,26 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="py-20" 
-      style={{ 
-        background: `linear-gradient(to bottom, ${colors.dark}, ${colors.darkest})`,
-        opacity: opacity,
-        transition: "opacity 1.5s ease-in-out"
-      }}
+      className="py-20 relative overflow-hidden"
+      style={{ backgroundColor: "#0B0C10" }}
     >
+      <div 
+        className="absolute inset-0 opacity-20 z-0"
+        style={{
+          backgroundImage: "linear-gradient(to right, #1F2833 1px, transparent 1px), linear-gradient(to bottom, #1F2833 1px, transparent 1px)", 
+          backgroundSize: "30px 30px"
+        }}
+      ></div>
+
+      <div
+        className="absolute bottom-0 left-1/3 w-64 h-64 rounded-full z-0"
+        style={{ backgroundColor: "#45A29E", opacity: "0.1", filter: "blur(80px)" }}
+      ></div>
+      <div
+        className="absolute top-1/4 right-1/4 w-40 h-40 rounded-full z-0"
+        style={{ backgroundColor: "#66FCF1", opacity: "0.08", filter: "blur(60px)" }}
+      ></div>
+
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 relative inline-block" style={{ color: colors.accent }}>

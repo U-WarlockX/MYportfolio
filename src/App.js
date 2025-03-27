@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
-import './App.css'; // Correct relative import path
+import Projects from "./components/Projects";
+import './App.css';
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
       <Footer />
     </>
